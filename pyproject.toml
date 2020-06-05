@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "metrics"
+version = "0.20.0"
+description = "Metrics redacted"
+authors = ["metrics <metrics@metrics.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.54.1"
+uvicorn = "^0"
+databases = "^0"
+ovat-schemas-metrics = { path = "schemas"}
+click = "^7.0"
+Faker = "^4.0.2"
+sentry-sdk = "^0.14.3"
+psycopg2-binary = "^2.8.5"
+alembic = "^1.4.2"
+httpx = "^0.13.2"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.7.9"
+black = "^19.10b0"
+requests = "^2.23.0"
+pytest = "^5.3.5"
+pytest-cov = "^2.8.1"
+sqlalchemy-utils = "^0.36.3"
+docstr-coverage = "^1.0.5"
+pytest-subtests = "^0.3.1"
+
+[tool.poetry.scripts]
+metrics-cli = "metrics.commands:cli"
+
+[tool.black]
+target-version = ['py38']
+
+[tool.isort]
+multi_line_output=3
+include_trailing_comma=true
+force_grid_wrap=0
+use_parentheses=true
+line_length=88
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
